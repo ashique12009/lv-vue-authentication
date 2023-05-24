@@ -1,19 +1,45 @@
+<script setup>
+import {ref} from 'vue';
+import { useRouter } from 'vue-router';
+import axios from 'axios';
+
+const router = useRouter();
+
+const form = ref({
+    name: '',
+    email: '',
+    password: '',
+    password_confirmation: ''
+});
+
+const handleRegister = async () => {
+    await axios.post('/register', {
+        name: form.value.name,
+        email: form.value.email,
+        password: form.value.password,
+        password_confirmation: form.value.password_confirmation,
+    });
+
+    router.push('/home');
+}
+
+</script>
+
 <template>
     <div class="registration-page">
         <h3 class="text-center">Registration</h3>
         <div class="form">
-            <form class="register-form">
-                <input type="email" placeholder="email address"/>
-                <input type="password" placeholder="password"/>
-                <button>Login</button>
+            <form class="register-form" @submit.prevent="handleRegister">
+                <input type="text" placeholder="name" v-model="form.name"/>
+                <input type="email" placeholder="email address" v-model="form.email"/>
+                <input type="password" placeholder="password" v-model="form.password"/>
+                <input type="password" placeholder="password confirmation" v-model="form.password_confirmation"/>
+                <button>Register</button>
                 <p class="message">Already registered? <a href="#">Login</a></p>
             </form>
         </div>
     </div>
 </template>
-
-<script>
-</script>
 
 <style scoped>
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
