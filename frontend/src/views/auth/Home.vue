@@ -12,7 +12,6 @@ onMounted(async () => {
 
 <template>
     <div class="container">
-        {{ authStore }}
         <div v-if="authStore.authUser">
             <h1>Home</h1>
             <h3>Welcome Home, {{ authStore.authUser.name }}</h3>
