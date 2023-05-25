@@ -1,23 +1,13 @@
 <script setup>
 import {ref} from 'vue';
-import axios from 'axios';
-import { useRouter } from 'vue-router';
+import { useAuthStore } from '@/stores/auth';
 
-const router = useRouter();
+const authStore = useAuthStore();
 
 const form = ref({
     email: '',
     password: ''
 });
-
-const handleLogin = async () => {
-    await axios.post('/login', {
-        email: form.value.email,
-        password: form.value.password
-    });
-
-    router.push('/home');
-}
 
 </script>
 
@@ -25,7 +15,7 @@ const handleLogin = async () => {
     <div class="login-page">
         <h3 class="text-center">Login</h3>
         <div class="form">
-            <form class="login-form" @submit.prevent="handleLogin">
+            <form class="login-form" @submit.prevent="authStore.handleLogin(form)">
                 <input type="email" placeholder="email" v-model="form.email"/>
                 <input type="password" placeholder="password" v-model="form.password"/>
                 <button>login</button>

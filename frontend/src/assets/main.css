@@ -5,6 +5,9 @@
 .navbar-nav .nav-link.active, .nav-link{
   color: #fff;
 }
+.nav-link:focus{
+  color: #fff;
+}
 
 /* Common */
 body{
