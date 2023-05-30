@@ -41,6 +41,12 @@ export const useAuthStore = defineStore('auth', {
             });
         
             this.router.push('/home');
+        },
+
+        async handleLogout() {
+            await axios.post('/logout');
+
+            this.authUser = null;
         }
     }
 });

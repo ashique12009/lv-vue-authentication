@@ -20,7 +20,7 @@ const authStore = useAuthStore();
                         <li class="nav-item" ><RouterLink to="/login" class="nav-link" aria-current="page">Login</RouterLink></li>
                     </template>
                     <template v-else>
-                        <li class="nav-item"><button class="nav-link custom-nav-link">Logout</button></li>
+                        <li class="nav-item"><button class="nav-link custom-nav-link" @click="authStore.handleLogout()">Logout</button></li>
                     </template>
                 </ul>
                 <form class="d-flex" role="search">
