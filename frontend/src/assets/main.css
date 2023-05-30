@@ -23,3 +23,7 @@ body{
 #app{
   height: 100vh;
 }
+.error-text{
+  margin-bottom: 5px;
+  color: red;
+}

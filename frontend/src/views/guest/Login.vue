@@ -17,7 +17,9 @@ const form = ref({
         <div class="form">
             <form class="login-form" @submit.prevent="authStore.handleLogin(form)">
                 <input type="email" placeholder="email" v-model="form.email"/>
+                <div class="error-text" v-if="authStore.errors.email">{{ authStore.errors.email[0] }}</div>
                 <input type="password" placeholder="password" v-model="form.password"/>
+                <div class="error-text" v-if="authStore.errors.password">{{ authStore.errors.password[0] }}</div>
                 <button>login</button>
                 <p class="message">Forgot password? <routerLink to="/forgot-password">Click here</routerLink></p>
                 <p class="message">Not registered? <a href="#">Create an account</a></p>
