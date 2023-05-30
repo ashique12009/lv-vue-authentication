@@ -28,6 +28,11 @@ const router = createRouter({
       path: '/forgot-password',
       name: 'ForgotPassword',
       component: () => import('@/views/guest/ForgotPassword.vue')
+    },
+    {
+      path: '/password-reset/:token',
+      name: 'PasswordReset',
+      component: () => import('@/views/guest/PasswordReset.vue')
     }
   ]
 });
