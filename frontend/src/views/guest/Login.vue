@@ -1,5 +1,5 @@
 <script setup>
-import {ref} from 'vue';
+import { ref, onMounted } from 'vue';
 import { useAuthStore } from '@/stores/auth';
 
 const authStore = useAuthStore();
@@ -7,6 +7,11 @@ const authStore = useAuthStore();
 const form = ref({
     email: '',
     password: ''
+});
+
+onMounted(() => {
+    authStore.errors.email = '';
+    authStore.errors.password = '';
 });
 
 </script>
@@ -22,7 +27,7 @@ const form = ref({
                 <div class="error-text" v-if="authStore.errors.password">{{ authStore.errors.password[0] }}</div>
                 <button>login</button>
                 <p class="message">Forgot password? <routerLink to="/forgot-password">Click here</routerLink></p>
-                <p class="message">Not registered? <a href="#">Create an account</a></p>
+                <p class="message">Not registered? <routerLink to="/registration">Create an account</routerLink></p>
             </form>
         </div>
     </div>

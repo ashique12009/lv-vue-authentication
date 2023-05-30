@@ -1,5 +1,5 @@
 <script setup>
-import {ref} from 'vue';
+import { ref, onMounted } from 'vue';
 import { useAuthStore } from '@/stores/auth';
 import { useRoute } from 'vue-router';
 
@@ -11,6 +11,11 @@ const form = ref({
     password_confirmation: '',
     email: route.query.email,
     token: route.params.token
+});
+
+onMounted(() => {
+    authStore.errors.email = '';
+    authStore.errors.password = '';
 });
 
 </script>

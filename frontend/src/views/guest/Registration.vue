@@ -26,7 +26,7 @@ const form = ref({
                 <div class="error-text" v-if="authStore.errors.password">{{ authStore.errors.password[0] }}</div>
                 <input type="password" placeholder="password confirmation" v-model="form.password_confirmation"/>
                 <button>Register</button>
-                <p class="message">Already registered? <a href="#">Login</a></p>
+                <p class="message">Already registered? <routerLink to="/login">Login</routerLink></p>
             </form>
         </div>
     </div>
