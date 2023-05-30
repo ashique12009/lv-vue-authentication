@@ -6,23 +6,28 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'welcome',
+      name: 'Welcome',
       component: Welcome
     },
     {
       path: '/registration',
-      name: 'registration',
+      name: 'Registration',
       component: () => import('@/views/guest/Registration.vue')
     },
     {
       path: '/login',
-      name: 'login',
+      name: 'Login',
       component: () => import('@/views/guest/Login.vue')
     },
     {
       path: '/home',
-      name: 'home',
+      name: 'Home',
       component: () => import('@/views/auth/Home.vue')
+    },
+    {
+      path: '/forgot-password',
+      name: 'ForgotPassword',
+      component: () => import('@/views/guest/ForgotPassword.vue')
     }
   ]
 });

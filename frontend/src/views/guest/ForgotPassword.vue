@@ -4,23 +4,17 @@ import { useAuthStore } from '@/stores/auth';
 
 const authStore = useAuthStore();
 
-const form = ref({
-    email: '',
-    password: ''
-});
+const email = ref('');
 
 </script>
 
 <template>
     <div class="login-page">
-        <h3 class="text-center">Login</h3>
+        <h3 class="text-center">Forgot password</h3>
         <div class="form">
-            <form class="login-form" @submit.prevent="authStore.handleLogin(form)">
-                <input type="email" placeholder="email" v-model="form.email"/>
-                <input type="password" placeholder="password" v-model="form.password"/>
-                <button>login</button>
-                <p class="message">Forgot password? <routerLink to="/forgot-password">Click here</routerLink></p>
-                <p class="message">Not registered? <a href="#">Create an account</a></p>
+            <form class="login-form" @submit.prevent="authStore.handleForgotPassword(email)">
+                <input type="email" placeholder="email" v-model="email"/>
+                <button>Submit</button>
             </form>
         </div>
     </div>
