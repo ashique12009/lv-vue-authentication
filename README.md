@@ -21,8 +21,8 @@ Registration:
 Registration error:
 ![registration-errors](https://github.com/ashique12009/lv-vue-authentication/assets/5427021/74d65163-fa41-43f8-b515-33caf8cb58de)
 
-Reset password:
-![reset-password](https://github.com/ashique12009/lv-vue-authentication/assets/5427021/79e5c485-a2dc-43fc-a97a-5791f576a89b)
-
 Forgot password:
 ![forgot-password](https://github.com/ashique12009/lv-vue-authentication/assets/5427021/375b7b20-70a7-4927-bb62-02e4679279e3)
+
+Reset password:
+![reset-password](https://github.com/ashique12009/lv-vue-authentication/assets/5427021/79e5c485-a2dc-43fc-a97a-5791f576a89b)
