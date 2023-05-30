@@ -8,6 +8,13 @@
 .nav-link:focus{
   color: #fff;
 }
+.nav-link:hover{
+  color: bisque;
+}
+.custom-nav-link{
+  background-color: transparent;
+  border: none;
+}
 
 /* Common */
 body{
