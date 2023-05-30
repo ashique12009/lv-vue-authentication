@@ -19,8 +19,11 @@ const form = ref({
         <div class="form">
             <form class="register-form" @submit.prevent="authStore.handleRegister(form)">
                 <input type="text" placeholder="name" v-model="form.name"/>
+                <div class="error-text" v-if="authStore.errors.name">{{ authStore.errors.name[0] }}</div>
                 <input type="email" placeholder="email address" v-model="form.email"/>
+                <div class="error-text" v-if="authStore.errors.email">{{ authStore.errors.email[0] }}</div>
                 <input type="password" placeholder="password" v-model="form.password"/>
+                <div class="error-text" v-if="authStore.errors.password">{{ authStore.errors.password[0] }}</div>
                 <input type="password" placeholder="password confirmation" v-model="form.password_confirmation"/>
                 <button>Register</button>
                 <p class="message">Already registered? <a href="#">Login</a></p>

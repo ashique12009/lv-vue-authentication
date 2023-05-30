@@ -14,6 +14,7 @@ const email = ref('');
         <div class="form">
             <form class="login-form" @submit.prevent="authStore.handleForgotPassword(email)">
                 <input type="email" placeholder="email" v-model="email"/>
+                <div class="error-text" v-if="authStore.errors.email">{{ authStore.errors.email[0] }}</div>
                 <button>Submit</button>
             </form>
         </div>
