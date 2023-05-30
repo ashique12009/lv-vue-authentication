@@ -28,6 +28,19 @@ export const useAuthStore = defineStore('auth', {
             });
 
             this.router.push('/home');
+        },
+
+        async handleRegister(data) {
+            await this.getToken();
+
+            await axios.post('/register', {
+                name: data.name,
+                email: data.email,
+                password: data.password,
+                password_confirmation: data.password_confirmation,
+            });
+        
+            this.router.push('/home');
         }
     }
 });
